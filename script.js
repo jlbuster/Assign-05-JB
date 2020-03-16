@@ -42,15 +42,107 @@ for (i = 0; i < 9; i++) {
     bigBlock.appendChild(timeBlock)
 }
 
-//Creating on click function so that buttons will save inputs to local storage
-let inp0 = document.getElementById('input0')
+document.getElementById('input0').setAttribute('value', localStorage.input9am)
+document.getElementById('input1').setAttribute('value', localStorage.input10am)
+document.getElementById('input2').setAttribute('value', localStorage.input11am)
+document.getElementById('input3').setAttribute('value', localStorage.input12pm)
+document.getElementById('input4').setAttribute('value', localStorage.input1pm)
+document.getElementById('input5').setAttribute('value', localStorage.input2pm)
+document.getElementById('input6').setAttribute('value', localStorage.input3pm)
+document.getElementById('input7').setAttribute('value', localStorage.input4pm)
+document.getElementById('input8').setAttribute('value', localStorage.input5pm)
 
+//Creating variables for the on local storage stuff
+let inp0 = document.getElementById('input0')
+let inp1 = document.getElementById('input1')
+let inp2 = document.getElementById('input2')
+let inp3 = document.getElementById('input3')
+let inp4 = document.getElementById('input4')
+let inp5 = document.getElementById('input5')
+let inp6 = document.getElementById('input6')
+let inp7 = document.getElementById('input7')
+let inp8 = document.getElementById('input8')
+
+
+//Creating on click function so that buttons will save inputs to local storage
 document.getElementById('button0').addEventListener('click', function(event) {
     event.preventDefault()
 
-    inp0.setAttribute('value', localStorage.getItem('input9am'))
-
     localStorage.setItem('input9am', inp0.value)
+
+    inp0.textContent = localStorage.getItem('input9am')
+
+})
+
+document.getElementById('button1').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input10am', inp1.value)
+
+    inp1.textContent = localStorage.getItem('input10am')
+
+})
+
+document.getElementById('button2').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input11am', inp2.value)
+
+    inp2.textContent = localStorage.getItem('input11am')
+
+})
+
+document.getElementById('button3').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input12pm', inp3.value)
+
+    inp3.textContent = localStorage.getItem('input12pm')
+
+})
+
+document.getElementById('button4').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input1pm', inp4.value)
+
+    inp4.textContent = localStorage.getItem('input1pm')
+
+})
+
+document.getElementById('button5').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input2pm', inp5.value)
+
+    inp5.textContent = localStorage.getItem('input2pm')
+
+})
+
+document.getElementById('button6').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input3pm', inp6.value)
+
+    inp6.textContent = localStorage.getItem('input3pm')
+
+})
+
+document.getElementById('button7').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input4pm', inp7.value)
+
+    inp7.textContent = localStorage.getItem('input4pm')
+
+})
+
+document.getElementById('button8').addEventListener('click', function(event) {
+    event.preventDefault()
+
+    localStorage.setItem('input5pm', inp8.value)
+
+    inp8.textContent = localStorage.getItem('input5pm')
 
 })
 
