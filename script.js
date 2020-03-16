@@ -23,34 +23,34 @@ for (i = 0; i < 9; i++) {
     } else {
         hourBlock.textContent = hours[i] + 'PM'
     }
-    timeBlock.appendChild(hourBlock)
+    timeBlock.append(hourBlock)
 
     //Creating an input tag to hold whatever the user types
     let inputBlock = document.createElement('input')
     inputBlock.setAttribute('class', 'col-9')
     inputBlock.setAttribute('id', 'input' + i)
-    timeBlock.appendChild(inputBlock)
+    timeBlock.append(inputBlock)
 
     //Creating a button tag which will allow the user to save their inputs to local storage
     let buttonBlock = document.createElement('button')
     buttonBlock.setAttribute('class', 'col-1 saveBtn')
     buttonBlock.setAttribute('id', 'button' + i)
     buttonBlock.textContent = "Save"
-    timeBlock.appendChild(buttonBlock)
+    timeBlock.append(buttonBlock)
 
     //Appending the timeBlock div to the container div in index.html
-    bigBlock.appendChild(timeBlock)
+    bigBlock.append(timeBlock)
 }
 
-document.getElementById('input0').setAttribute('value', localStorage.input9am)
-document.getElementById('input1').setAttribute('value', localStorage.input10am)
-document.getElementById('input2').setAttribute('value', localStorage.input11am)
-document.getElementById('input3').setAttribute('value', localStorage.input12pm)
-document.getElementById('input4').setAttribute('value', localStorage.input1pm)
-document.getElementById('input5').setAttribute('value', localStorage.input2pm)
-document.getElementById('input6').setAttribute('value', localStorage.input3pm)
-document.getElementById('input7').setAttribute('value', localStorage.input4pm)
-document.getElementById('input8').setAttribute('value', localStorage.input5pm)
+$('#input0').attr('value', localStorage.input9am)
+$('#input1').attr('value', localStorage.input10am)
+$('#input2').attr('value', localStorage.input11am)
+$('#input3').attr('value', localStorage.input12pm)
+$('#input4').attr('value', localStorage.input1pm)
+$('#input5').attr('value', localStorage.input2pm)
+$('#input6').attr('value', localStorage.input3pm)
+$('#input7').attr('value', localStorage.input4pm)
+$('#input8').attr('value', localStorage.input5pm)
 
 //Creating variables for the on local storage stuff
 let inp0 = document.getElementById('input0')
@@ -65,96 +65,96 @@ let inp8 = document.getElementById('input8')
 
 
 //Creating on click function so that buttons will save inputs to local storage
-document.getElementById('button0').addEventListener('click', function(event) {
+$('#button0').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input9am', inp0.value)
 
-    inp0.textContent = localStorage.getItem('input9am')
+    inp0.text(localStorage.getItem('input9am'))
 
 })
 
-document.getElementById('button1').addEventListener('click', function(event) {
+$('#button1').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input10am', inp1.value)
 
-    inp1.textContent = localStorage.getItem('input10am')
+    inp1.text(localStorage.getItem('input10am'))
 
 })
 
-document.getElementById('button2').addEventListener('click', function(event) {
+$('#button2').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input11am', inp2.value)
 
-    inp2.textContent = localStorage.getItem('input11am')
+    inp2.text(localStorage.getItem('input11am'))
 
 })
 
-document.getElementById('button3').addEventListener('click', function(event) {
+$('#button3').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input12pm', inp3.value)
 
-    inp3.textContent = localStorage.getItem('input12pm')
+    inp3.text(localStorage.getItem('input12pm'))
 
 })
 
-document.getElementById('button4').addEventListener('click', function(event) {
+$('#button4').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input1pm', inp4.value)
 
-    inp4.textContent = localStorage.getItem('input1pm')
+    inp4.text(localStorage.getItem('input1pm'))
 
 })
 
-document.getElementById('button5').addEventListener('click', function(event) {
+$('#button5').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input2pm', inp5.value)
 
-    inp5.textContent = localStorage.getItem('input2pm')
+    inp5.text(localStorage.getItem('input2pm'))
 
 })
 
-document.getElementById('button6').addEventListener('click', function(event) {
+$('#button6').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input3pm', inp6.value)
 
-    inp6.textContent = localStorage.getItem('input3pm')
+    inp6.text(localStorage.getItem('input3pm'))
 
 })
 
-document.getElementById('button7').addEventListener('click', function(event) {
+$('#button7').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input4pm', inp7.value)
 
-    inp7.textContent = localStorage.getItem('input4pm')
+    inp7.text(localStorage.getItem('input4pm'))
 
 })
 
-document.getElementById('button8').addEventListener('click', function(event) {
+$('#button8').on('click', function(event) {
     event.preventDefault()
 
     localStorage.setItem('input5pm', inp8.value)
 
-    inp8.textContent = localStorage.getItem('input5pm')
+    inp8.text(localStorage.getItem('input5pm'))
 
 })
 
 //Checks the time and adds the correct class based on the time
 function timeCheck0 (past, present, future) {
     if (past > present) {
-        document.getElementById('input0').classList.add('past')
+        $('#input0').addClass('past')
     } else if (past < present) {
-        document.getElementById('input0').classList.add('future')
+        $('#input0').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input0').classList.add('present')
+        $('#input0').addClass('present')
     }
 }
 
@@ -162,12 +162,12 @@ timeCheck0(now, timeNine, timeTen)
 
 function timeCheck1 (past, present, future) {
     if (past > present) {
-        document.getElementById('input1').classList.add('past')
+        $('#input1').addClass('past')
     } else if (past < present) {
-        document.getElementById('input1').classList.add('future')
+        $('#input1').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input1').classList.add('present')
+        $('#input1').addClass('present')
     }
 }
 
@@ -175,12 +175,12 @@ timeCheck1(now, timeNine, timeTen)
 
 function timeCheck2 (past, present, future) {
     if (past > present) {
-        document.getElementById('input2').classList.add('past')
+        $('#input2').addClass('past')
     } else if (past < present) {
-        document.getElementById('input2').classList.add('future')
+        $('#input2').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input2').classList.add('present')
+        $('#input2').addClass('present')
     }
 }
 
@@ -188,12 +188,12 @@ timeCheck2(now, timeNine, timeTen)
 
 function timeCheck3 (past, present, future) {
     if (past > present) {
-        document.getElementById('input3').classList.add('past')
+        $('#input3').addClass('past')
     } else if (past < present) {
-        document.getElementById('input3').classList.add('future')
+        $('#input3').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input3').classList.add('present')
+        $('#input3').addClass('present')
     }
 }
 
@@ -201,12 +201,12 @@ timeCheck3(now, timeNine, timeTen)
 
 function timeCheck4 (past, present, future) {
     if (past > present) {
-        document.getElementById('input4').classList.add('past')
+        $('#input4').addClass('past')
     } else if (past < present) {
-        document.getElementById('input4').classList.add('future')
+        $('#input4').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input4').classList.add('present')
+        $('#input4').addClass('present')
     }
 }
 
@@ -214,12 +214,12 @@ timeCheck4(now, timeNine, timeTen)
 
 function timeCheck5 (past, present, future) {
     if (past > present) {
-        document.getElementById('input5').classList.add('past')
+        $('#input5').addClass('past')
     } else if (past < present) {
-        document.getElementById('input5').classList.add('future')
+        $('#input5').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input5').classList.add('present')
+        $('#input5').addClass('present')
     }
 }
 
@@ -227,12 +227,12 @@ timeCheck5(now, timeNine, timeTen)
 
 function timeCheck6 (past, present, future) {
     if (past > present) {
-        document.getElementById('input6').classList.add('past')
+        $('#input6').addClass('past')
     } else if (past < present) {
-        document.getElementById('input6').classList.add('future')
+        $('#input6').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input6').classList.add('present')
+        $('#input6').addClass('present')
     }
 }
 
@@ -240,12 +240,12 @@ timeCheck6(now, timeNine, timeTen)
 
 function timeCheck7 (past, present, future) {
     if (past > present) {
-        document.getElementById('input7').classList.add('past')
+        $('#input7').addClass('past')
     } else if (past < present) {
-        document.getElementById('input7').classList.add('future')
+        $('#input7').addClass('future')
     } 
     if (past < future) {
-        document.getElementById('input7').classList.add('present')
+        $('#input7').addClass('present')
     }
 }
 
@@ -253,12 +253,12 @@ timeCheck7(now, timeNine, timeTen)
 
 function timeCheck8 (past, present, future) {
     if (past > present) {
-        document.getElementById('input8').classList.add('past')
+        $('#input8').addClass('past')
     } else if (past < present) {
-        document.getElementById('input8').classList.add('future')
+        $('#input8').assClass('future')
     } 
     if (past < future) {
-        document.getElementById('input8').classList.add('present')
+        $('#input8').addClass('present')
     }
 }
 
